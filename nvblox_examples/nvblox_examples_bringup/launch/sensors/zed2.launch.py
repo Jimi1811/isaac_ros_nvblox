@@ -62,7 +62,7 @@ def generate_launch_description():
     # Robot State Publisher node (publishing static tfs for the camera)
     rsp_node = Node(
         package='robot_state_publisher',
-        namespace='zed2',
+        namespace='zed2i',
         executable='robot_state_publisher',
         name='zed_state_publisher',
         output='screen',
@@ -70,8 +70,8 @@ def generate_launch_description():
             'robot_description': Command(
                 [
                     'xacro', ' ', xacro_path, ' ',
-                    'camera_name:=', 'zed2', ' ',
-                    'camera_model:=', 'zed2', ' ',
+                    'camera_name:=', 'zed2i', ' ',
+                    'camera_model:=', 'zed2i', ' ',
                     'base_frame:=', 'base_link', ' ',
                 ])
         }]
@@ -83,7 +83,7 @@ def generate_launch_description():
             # Zed2 wrapper node
             ComposableNode(
                 package='zed_components',
-                namespace='zed2',
+                namespace='zed2i',
                 name='zed_node',
                 plugin='stereolabs::ZedCamera',
                 parameters=[
