@@ -311,7 +311,7 @@ protected:
   /// Pose frame to use if using transform topics.
   std::string pose_frame_ = "base_link";
   float max_depth_update_hz_ = 30.0f;
-  float max_color_update_hz_ = 5.0f;
+  float max_color_update_hz_ = 30.0f;
   float max_lidar_update_hz_ = 10.0f;
   float mesh_update_rate_hz_ = 5.0f;
   float esdf_update_rate_hz_ = 2.0f;
