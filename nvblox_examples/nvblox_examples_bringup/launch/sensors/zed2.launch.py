@@ -30,7 +30,7 @@ def generate_launch_description():
     # Config file
     config_file_camera = os.path.join(
         get_package_share_directory('nvblox_examples_bringup'),
-        'config', 'sensors', 'zed2.yaml')
+        'config', 'sensors', 'zed2i.yaml')
 
     config_file_common = os.path.join(
         get_package_share_directory('nvblox_examples_bringup'),
