@@ -125,16 +125,16 @@ def generate_launch_description():
 
         # Remappings for Isaac Sim
         SetRemap(src=['/stereo_camera/left/camera_info'],
-                 dst=['/front/stereo_camera/left/camera_info'],
+                 dst=['/zed/zed_node/left/camera_info'],
                  condition=setup_for_isaac_sim),
         SetRemap(src=['/stereo_camera/right/camera_info'],
-                 dst=['/front/stereo_camera/right/camera_info'],
+                 dst=['/zed/zed_node/right/camera_info'],
                  condition=setup_for_isaac_sim),
         SetRemap(src=['/stereo_camera/left/image'],
-                 dst=['/front/stereo_camera/left/rgb'],
+                 dst=['/zed/zed_node/left/image_rect_color'],
                  condition=setup_for_isaac_sim),
         SetRemap(src=['/stereo_camera/right/image'],
-                 dst=['/front/stereo_camera/right/rgb'],
+                 dst=['/zed/zed_node/right/image_rect_color'],
                  condition=setup_for_isaac_sim),
 
         # Remappings for Realsense

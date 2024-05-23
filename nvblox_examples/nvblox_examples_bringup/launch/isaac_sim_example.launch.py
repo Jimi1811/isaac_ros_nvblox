@@ -40,7 +40,7 @@ def generate_launch_description():
     # NOTE(remos): When running Vslam make sure to set the global frame 
     #              to e.g. 'odom_vslam' to not clash with the Isaac Sim odometry frame
     run_vslam_arg = DeclareLaunchArgument(
-        'run_vslam', default_value='False',
+        'run_vslam', default_value='True',
         description='Whether to run vslam')
     global_frame = LaunchConfiguration('global_frame',
                                        default='odom')
