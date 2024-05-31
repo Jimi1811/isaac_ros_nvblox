@@ -75,14 +75,14 @@ def generate_launch_description():
     #     condition=UnlessCondition(LaunchConfiguration('from_bag')))
 
     # Vslam
-    vslam_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource([os.path.join(
-            bringup_dir, 'launch', 'perception', 'vslam.launch.py')]),
-        launch_arguments={'output_odom_frame_name': global_frame, 
-                          'setup_for_realsense': 'True',
-                          'run_odometry_flattening': LaunchConfiguration('flatten_odometry_to_2d'),
-                          'attach_to_shared_component_container': 'True',
-                          'component_container_name': shared_container_name}.items())
+    # vslam_launch = IncludeLaunchDescription(
+    #     PythonLaunchDescriptionSource([os.path.join(
+    #         bringup_dir, 'launch', 'perception', 'vslam.launch.py')]),
+    #     launch_arguments={'output_odom_frame_name': global_frame, 
+    #                       'setup_for_realsense': 'True',
+    #                       'run_odometry_flattening': LaunchConfiguration('flatten_odometry_to_2d'),
+    #                       'attach_to_shared_component_container': 'True',
+    #                       'component_container_name': shared_container_name}.items())
 
     # Nvblox
     nvblox_launch = IncludeLaunchDescription(
@@ -90,7 +90,7 @@ def generate_launch_description():
             bringup_dir, 'launch', 'nvblox', 'nvblox.launch.py')]),
         launch_arguments={'global_frame': global_frame,
                           'setup_for_dynamics': 'True',
-                          'setup_for_realsense': 'True',
+                          'setup_for_zed': 'True',
                           'attach_to_shared_component_container': 'True',
                           'component_container_name': shared_container_name}.items())
 
@@ -123,7 +123,7 @@ def generate_launch_description():
         # flatten_odometry_to_2d_arg,
         shared_container,
         # realsense_launch,
-        vslam_launch,
+        # vslam_launch,
         nvblox_launch,
         bag_play,
         rviz_launch])
